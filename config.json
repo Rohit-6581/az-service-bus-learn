@@ -1,0 +1,23 @@
+{
+  "UserConfig": {
+    "Namespaces": [
+      {
+        "Name": "learning-namespace",
+        "Queues": [
+          { "Name": "orders-queue" }
+        ],
+        "Topics": [
+          {
+            "Name": "orders-topic",
+            "Subscriptions": [
+              { "Name": "warehouse" },
+              { "Name": "email" },
+              { "Name": "analytics" }
+            ]
+          }
+        ]
+      }
+    ],
+    "Logging": { "Type": "File" }
+  }
+}
