@@ -4,15 +4,7 @@
       {
         "Name": "learning-namespace",
         "Queues": [
-          {
-            "Name": "orders-queue",
-            "Properties": {
-              "RequiresDuplicateDetection": true,
-              "DuplicateDetectionHistoryTimeWindow": "PT5M",
-              "MaxDeliveryCount": 3,
-              "LockDuration": "PT10S"
-            }
-          }
+          { "Name": "orders-queue" }
         ],
         "Topics": [
           {

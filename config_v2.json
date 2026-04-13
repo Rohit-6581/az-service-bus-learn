@@ -8,9 +8,7 @@
             "Name": "orders-queue",
             "Properties": {
               "RequiresDuplicateDetection": true,
-              "DuplicateDetectionHistoryTimeWindow": "PT5M",
-              "MaxDeliveryCount": 3,
-              "LockDuration": "PT10S"
+              "DuplicateDetectionHistoryTimeWindow": "PT5M"
             }
           }
         ],

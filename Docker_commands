@@ -1,0 +1,18 @@
+# Stop and remove emulator only — keep sqledge running
+docker stop servicebus-emulator
+docker rm servicebus-emulator
+
+# Restart emulator with updated config
+docker run -d --name servicebus-emulator `
+  -p 5672:5672 `
+  -e ACCEPT_EULA=Y `
+  -e SQL_SERVER=host.docker.internal `
+  -e MSSQL_SA_PASSWORD=ServiceBus123! `
+  -v ${PWD}/config.json:/ServiceBus_Emulator/ConfigFiles/Config.json `
+  mcr.microsoft.com/azure-messaging/servicebus-emulator:latest
+
+# Wait for it to fully start
+Start-Sleep -Seconds 20
+
+# Confirm it is up
+docker logs servicebus-emulator
